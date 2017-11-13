@@ -183,7 +183,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Login.aspx" />
-    <Content Include="Account\Manage.aspx" />
+    <Content Include="Views\AddMember.aspx" />
+    <Content Include="Views\Budget.aspx" />
+    <Content Include="Views\Calendar.aspx" />
+    <Content Include="Views\CreateLogin.aspx" />
+    <Content Include="Views\Grocery.aspx" />
+    <Content Include="Views\Manage.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\Oops.aspx" />
     <Content Include="Account\ThankYou.aspx" />
@@ -239,6 +244,7 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Views\ToDo.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
@@ -260,11 +266,46 @@
     <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Manage.aspx.cs">
+    <Compile Include="Views\AddMember.aspx.cs">
+      <DependentUpon>AddMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AddMember.aspx.designer.cs">
+      <DependentUpon>AddMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Budget.aspx.cs">
+      <DependentUpon>Budget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Budget.aspx.designer.cs">
+      <DependentUpon>Budget.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateLogin.aspx.cs">
+      <DependentUpon>CreateLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CreateLogin.aspx.designer.cs">
+      <DependentUpon>CreateLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Grocery.aspx.cs">
+      <DependentUpon>Grocery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Grocery.aspx.designer.cs">
+      <DependentUpon>Grocery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Manage.aspx.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Manage.aspx.designer.cs">
+    <Compile Include="Views\Manage.aspx.designer.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Register.aspx.cs">
@@ -344,6 +385,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToDo.aspx.cs">
+      <DependentUpon>ToDo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ToDo.aspx.designer.cs">
+      <DependentUpon>ToDo.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

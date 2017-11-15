@@ -13,5 +13,10 @@ namespace Connection.Views
         {
 
         }
+
+        protected void btnAddMember_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

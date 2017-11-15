@@ -16,12 +16,22 @@ namespace Connection.Database
             if(login == null || password == null) { validate = false; }
 
             SqlConnection connection = FamilyDB.getConnection();
-            if (connection != null)
+            try
             {
-                connection.Open();
+                if(connection != null)
+                {
+                    connection.Open();
+                }
+                
             }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            
+            
 
-            String query = "SELECT * FROM Users WHERE userLogin = @login and userPasswrod = @password";
+            String query = "SELECT * FROM Users WHERE userLogin = @login and userPassword = @password";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@login", login);
             cmd.Parameters.AddWithValue("@password", password);
@@ -48,11 +58,11 @@ namespace Connection.Database
             }
             catch (SqlException ex)
             {
-                return false;
+                Console.WriteLine(ex);
             }
             catch (Exception ex)
             {
-                return false;
+                Console.WriteLine(ex);
             }
             finally
             {

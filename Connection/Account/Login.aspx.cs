@@ -15,7 +15,6 @@ namespace Connection.Account
         {
 
         }
-        //finish hooking up login
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             string login = txtLogin.Text;
@@ -29,7 +28,7 @@ namespace Connection.Account
                 Users u = new Users();
                 u = UsersDA.getUserByLogin(login, password);
                 Session["User"] = u;
-                Response.Redirect("~/Account/Manage.aspx");
+                Response.Redirect("~/Views/Manage.aspx");
             }
             else
             {

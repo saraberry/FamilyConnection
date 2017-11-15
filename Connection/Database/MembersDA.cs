@@ -42,6 +42,52 @@ namespace Connection.Database
                 connection.Close();
             }
         }
+        public static Members getMemberFamilyID(int famID)
+        {
+            if (famID == null) { return null; }
 
+            Members m = new Members();
+
+            SqlConnection connection = FamilyDB.getConnection();
+            if (connection != null)
+            {
+                connection.Open();
+            }
+
+            String query = "SELECT * FROM Members WHERE familyID = @famID";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@famID", famID);
+
+
+            try
+            {
+                SqlDataReader read = cmd.ExecuteReader();
+
+                if (read.Read())
+                {
+                    m.MemberID = (int)read["mamberID"];
+                    m.FamilyID = (int)read["familyID"];
+                    m.MemberFirst = (string)read["memberFirst"];
+                    m.MemberLast = (string)read["memberLast"];
+                    m.MemberRole = (string)read["memberRole"];
+                    m.MemberBirthdate = (DateTime)read["memberBirthdate"];
+                }
+                else return null;
+
+            }
+            catch (SqlException ex)
+            {
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return m;
+        }
     }
 }

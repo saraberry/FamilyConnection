@@ -40,13 +40,22 @@ namespace Connection.Account {
         protected global::System.Web.UI.WebControls.Label lblHOHLast;
         
         /// <summary>
-        /// Label1 control.
+        /// lblSubcLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblSubcLabel;
+        
+        /// <summary>
+        /// lblSubscEnd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSubscEnd;
         
         /// <summary>
         /// pnlFamilyMem control.
@@ -58,13 +67,22 @@ namespace Connection.Account {
         protected global::System.Web.UI.WebControls.Panel pnlFamilyMem;
         
         /// <summary>
-        /// ListBox1 control.
+        /// ConncectionDB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox1;
+        protected global::System.Web.UI.WebControls.SqlDataSource ConncectionDB;
+        
+        /// <summary>
+        /// ListView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ListView1;
         
         /// <summary>
         /// pnlManageMembers control.

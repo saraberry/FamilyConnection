@@ -31,6 +31,15 @@ namespace Connection.Views {
         protected global::System.Web.UI.WebControls.TextBox txtMemFName;
         
         /// <summary>
+        /// valFName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valFName;
+        
+        /// <summary>
         /// lblLName control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace Connection.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMemLName;
+        
+        /// <summary>
+        /// valLName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valLName;
         
         /// <summary>
         /// lblBirthday control.
@@ -67,6 +85,15 @@ namespace Connection.Views {
         protected global::System.Web.UI.WebControls.TextBox txtBirthdate;
         
         /// <summary>
+        /// valBday control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator valBday;
+        
+        /// <summary>
         /// lblRole control.
         /// </summary>
         /// <remarks>
@@ -83,6 +110,15 @@ namespace Connection.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRole;
+        
+        /// <summary>
+        /// valRole control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRole;
         
         /// <summary>
         /// btnAddMember control.

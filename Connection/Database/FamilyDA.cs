@@ -59,6 +59,53 @@ namespace Connection.Database
             return f.FamilyID;
         }
 
+        public static Family getFamilyByID(int familyID)
+        {
+
+            if (familyID == null) return null;
+            Family f = new Family();
+
+            SqlConnection connection = FamilyDB.getConnection();
+            if (connection != null)
+            {
+                connection.Open();
+            }
+
+            String query = "SELECT * FROM Family WHERE familyID = @familyID";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@familyID", familyID);
+
+            try
+            {
+                SqlDataReader read = cmd.ExecuteReader();
+
+                if (read.Read())
+                {
+                    f.FamilyID = (int)read["familyID"];
+                    f.SubscriptionStart = (DateTime)read["subscriptionStart"];
+                    f.SubscriptionEnd = (DateTime)read["subscriptionEnd"];
+                    f.HOHFirst = (string)read["HOHFirst"];
+                    f.HOHLast = (string)read["HOHLast"];
+
+                }
+                else return null;
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return f;
+        }
+
         public static void addFamily(Family f)
         {
             SqlConnection connection = FamilyDB.getConnection();

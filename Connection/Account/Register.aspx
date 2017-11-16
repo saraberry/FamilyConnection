@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Connection.Account.Register" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <h1 class="plum">
+     <h1 class="plum center">
         Register</h1>
     <p>
         &nbsp;</p>
@@ -19,7 +19,7 @@
                 <asp:TextBox ID="txtHOHFName" runat="server" Width="250px"></asp:TextBox>
             </td>
             <td style="height: 30px">
-                <asp:RequiredFieldValidator ID="valFName" runat="server" ControlToValidate="txtHOHFName" ErrorMessage="First Name is required"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="valFName" runat="server" ControlToValidate="txtHOHFName" ErrorMessage="First Name is required" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -34,7 +34,7 @@
                 <asp:TextBox ID="txtHOHLName" runat="server" Width="250px"></asp:TextBox>
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="valLName" runat="server" ControlToValidate="txtHOHLName" ErrorMessage="Last Name is required"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="valLName" runat="server" ControlToValidate="txtHOHLName" ErrorMessage="Last Name is required" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -49,7 +49,7 @@
                 <asp:TextBox ID="txtHOHEmail" runat="server" Width="250px"></asp:TextBox>
             </td>
             <td>
-                <asp:RegularExpressionValidator ID="valEmail" runat="server" ControlToValidate="txtHOHEmail" ErrorMessage="Invalid Email" ValidationExpression="^(?(&quot;)(&quot;.+?(?&lt;!\\)&quot;@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&amp;'\*\+/=\?\^`\{\}\|~\w])*)(?&lt;=[0-9a-z])@))(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="valEmail" runat="server" ControlToValidate="txtHOHEmail" ErrorMessage="Invalid Email" ValidationExpression="^(?(&quot;)(&quot;.+?(?&lt;!\\)&quot;@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&amp;'\*\+/=\?\^`\{\}\|~\w])*)(?&lt;=[0-9a-z])@))(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$" ForeColor="Red"></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -63,7 +63,7 @@
                 <asp:TextBox ID="txtPwReg" runat="server" TextMode="Password" Width="250px"></asp:TextBox>
             </td>
             <td>
-                <asp:RegularExpressionValidator ID="valPass" runat="server" ControlToValidate="txtPwReg" ErrorMessage="Password must be a minimum of 8 characters long and contain an uppercase letter, a lowercase letter, and a number." ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="valPass" runat="server" ControlToValidate="txtPwReg" ErrorMessage="Password must be a minimum of 8 characters long and contain an uppercase letter, a lowercase letter, and a number" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" ForeColor="Red"></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -77,7 +77,7 @@
                 <asp:TextBox ID="txtPWRegConfirm" runat="server" TextMode="Password" Width="250px"></asp:TextBox>
             </td>
             <td>
-                <asp:CompareValidator ID="valPWMatch" runat="server" ControlToCompare="txtPwReg" ControlToValidate="txtPWRegConfirm" ErrorMessage="Passwords do not match"></asp:CompareValidator>
+                <asp:CompareValidator ID="valPWMatch" runat="server" ControlToCompare="txtPwReg" ControlToValidate="txtPWRegConfirm" ErrorMessage="Passwords do not match" ForeColor="Red"></asp:CompareValidator>
             </td>
         </tr>
         <tr>

@@ -187,6 +187,7 @@
     <Content Include="Views\Budget.aspx" />
     <Content Include="Views\Calendar.aspx" />
     <Content Include="Views\CreateLogin.aspx" />
+    <Content Include="Views\DeleteMember.aspx" />
     <Content Include="Views\Grocery.aspx" />
     <Content Include="Views\Manage.aspx" />
     <Content Include="Account\Register.aspx" />
@@ -293,6 +294,13 @@
     </Compile>
     <Compile Include="Views\CreateLogin.aspx.designer.cs">
       <DependentUpon>CreateLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeleteMember.aspx.cs">
+      <DependentUpon>DeleteMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\DeleteMember.aspx.designer.cs">
+      <DependentUpon>DeleteMember.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Grocery.aspx.cs">
       <DependentUpon>Grocery.aspx</DependentUpon>

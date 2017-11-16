@@ -2,8 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-    <asp:Panel ID="pnlFamilyInfo" runat="server" Height="188px">
-        
+    <asp:Panel ID="pnlFamilyInfo" runat="server" Height="188px" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px">
+       <div class ="pad">
         <h1 class="plum">Family Information</h1>
         <table class="nav-justified">
             <tr>
@@ -29,9 +29,11 @@
                 </td>
             </tr>
         </table>
+       </div>
     </asp:Panel>
     <br />
-    <asp:Panel ID="pnlFamilyMem" runat="server" Height="328px">
+    <asp:Panel ID="pnlFamilyMem" runat="server" Height="328px" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px">
+        <div class="pad">
         <h1 class="blue">Family Members</h1>
         <p class="blue">
             <asp:SqlDataSource ID="ConncectionDB" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [memberID], [memberFirst], [memberLast], [memberRole], [memberBirthdate] FROM [FamilyMembers] WHERE ([familyID] = @familyID)">
@@ -41,7 +43,7 @@
             </asp:SqlDataSource>
             <asp:ListView ID="ListView1" runat="server" DataSourceID="ConncectionDB" GroupItemCount="3">
                 <AlternatingItemTemplate>
-                    <td runat="server" style="background-color: #FFFFFF;color: #284775;">memberID:
+                    <td runat="server" style="background-color: #FFFFFF; color: #284775;">memberID:
                         <asp:DynamicControl runat="server" DataField="memberID" Mode="ReadOnly" />
                         <br />
                         memberFirst:
@@ -81,7 +83,7 @@
                     </td>
                 </EditItemTemplate>
                 <EmptyDataTemplate>
-                    <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
+                    <table runat="server" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px;">
                         <tr>
                             <td>No data was returned.</td>
                         </tr>
@@ -115,7 +117,7 @@
                     </td>
                 </InsertItemTemplate>
                 <ItemTemplate>
-                    <td runat="server" style="background-color: #E0FFFF;color: #333333;">memberID:
+                    <td runat="server" style="background-color: #E0FFFF; color: #333333;">memberID:
                         <asp:DynamicControl runat="server" DataField="memberID" Mode="ReadOnly" />
                         <br />
                         memberFirst:
@@ -136,19 +138,19 @@
                     <table runat="server">
                         <tr runat="server">
                             <td runat="server">
-                                <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px; font-family: Verdana, Arial, Helvetica, sans-serif;">
                                     <tr id="groupPlaceholder" runat="server">
                                     </tr>
                                 </table>
                             </td>
                         </tr>
                         <tr runat="server">
-                            <td runat="server" style="text-align: center;background-color: #5D7B9D;font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF"></td>
+                            <td runat="server" style="text-align: center; background-color: #5D7B9D; font-family: Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF"></td>
                         </tr>
                     </table>
                 </LayoutTemplate>
                 <SelectedItemTemplate>
-                    <td runat="server" style="background-color: #E2DED6;font-weight: bold;color: #333333;">memberID:
+                    <td runat="server" style="background-color: #E2DED6; font-weight: bold; color: #333333;">memberID:
                         <asp:DynamicControl runat="server" DataField="memberID" Mode="ReadOnly" />
                         <br />
                         memberFirst:
@@ -181,6 +183,7 @@
         </p>
             <p>
             </p>
+        </div>
     </asp:Panel>
     <br />
     <br />

@@ -183,10 +183,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Login.aspx" />
+    <Content Include="App_Data\FamilyDB_log.ldf">
+      <DependentUpon>FamilyDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Views\AddMember.aspx" />
     <Content Include="Views\Budget.aspx" />
     <Content Include="Views\Calendar.aspx" />
     <Content Include="Views\CreateLogin.aspx" />
+    <Content Include="Views\DeleteActivity.aspx" />
     <Content Include="Views\DeleteMember.aspx" />
     <Content Include="Views\Grocery.aspx" />
     <Content Include="Views\Manage.aspx" />
@@ -194,9 +198,6 @@
     <Content Include="Account\Oops.aspx" />
     <Content Include="Account\ThankYou.aspx" />
     <Content Include="App_Data\FamilyDB.mdf" />
-    <Content Include="App_Data\FamilyDB_log.ldf">
-      <DependentUpon>FamilyDB.mdf</DependentUpon>
-    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -294,6 +295,13 @@
     </Compile>
     <Compile Include="Views\CreateLogin.aspx.designer.cs">
       <DependentUpon>CreateLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeleteActivity.aspx.cs">
+      <DependentUpon>DeleteActivity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\DeleteActivity.aspx.designer.cs">
+      <DependentUpon>DeleteActivity.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\DeleteMember.aspx.cs">
       <DependentUpon>DeleteMember.aspx</DependentUpon>

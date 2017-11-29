@@ -7,21 +7,21 @@
         <h1 class="plum">Family Information</h1>
         <table class="nav-justified">
             <tr>
-                <td style="width: 292px">Family ID</td>
+                <td style="width: 166px">Family ID</td>
                 <td>
                     <asp:Label ID="lblFamID" runat="server"></asp:Label>
                 </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td style="width: 292px">Family Name</td>
+                <td style="width: 166px">Family Name</td>
                 <td>
                     <asp:Label ID="lblHOHLast" runat="server"></asp:Label>
                 </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td>
+                <td style="width: 166px">
                     <asp:Label ID="lblSubcLabel" runat="server">Subscription End Date</asp:Label>
                 </td>
                 <td>
@@ -35,7 +35,7 @@
     <asp:Panel ID="pnlFamilyMem" runat="server" Height="469px" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px">
         <div class="pad">
         <h1 class="blue">Family Members</h1>
-            <asp:TextBox ID="txtFamMem" runat="server" Height="195px" TextMode="MultiLine" Wrap="False" ReadOnly="True" Width="539px"></asp:TextBox>
+            <asp:TextBox ID="txtFamMem" runat="server" Height="195px" TextMode="MultiLine" Wrap="False" ReadOnly="True" Width="251px"></asp:TextBox>
             <br />
             <br />
         <asp:Panel ID="pnlManageMembers" runat="server">
@@ -51,15 +51,14 @@
         </div>
     </asp:Panel>
     <br />
-    <asp:Panel ID="pnlCalendar" runat="server" Height="910px" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px">
+    <asp:Panel ID="pnlCalendar" runat="server" Height="989px" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px">
         <br />
-       <h1 class="yellow">Family Calendar</h1> <br />
+       <h1 class="yellow">Family Calendar</h1> 
         <br />
-        &nbsp;
-        <table class="nav-justified">
+        &nbsp;<table class="nav-justified">
             <tr>
-                <td style="width: 442px">
-                    <asp:Calendar ID="calAgenda0" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px">
+                <td style="width: 283px">
+                    <asp:Calendar ID="calAgenda" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="167px" NextPrevFormat="FullMonth" Width="273px" SelectedDate="11/29/2017 11:54:22" VisibleDate="2017-11-29">
                         <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                         <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                         <OtherMonthDayStyle ForeColor="#999999" />
@@ -69,40 +68,35 @@
                     </asp:Calendar>
                 </td>
                 <td style="width: 477px">
-                    <asp:Panel ID="pnlManageCal0" runat="server" Height="193px">
-                        <br />
-                        <asp:Button ID="btnAddEvent0" runat="server" OnClick="btnAddEvent_Click" Text="Add Event" />
-                        <br />
-                        <br />
-                        <br />
-                        <asp:Button ID="btnEditEvent0" runat="server" Text="Edit Events" />
-                    </asp:Panel>
-                </td>
+                    &nbsp;</td>
                 <td>
                     &nbsp;</td>
             </tr>
             <tr>
-                <td style="width: 442px">&nbsp;</td>
+                <td style="width: 283px">&nbsp;</td>
                 <td style="width: 477px">&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td style="width: 442px">&nbsp;</td>
-                <td style="width: 477px">
-                    <asp:SqlDataSource ID="ConnectionDB" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [activityName], [startDate], [endDate], [time] FROM [Activity] WHERE ([startDate] = @startDate)">
-                        <SelectParameters>
-                            <asp:ControlParameter ControlID="calAgenda" DbType="Date" Name="startDate" PropertyName="SelectedDate" />
-                        </SelectParameters>
-                    </asp:SqlDataSource>
+                <td style="width: 283px; height: 134px;">
+                    <asp:Panel ID="pnlManageCal1" runat="server" Height="132px" Width="229px">
+                        <br />
+                        <asp:Button ID="btnAddEvent1" runat="server" OnClick="btnAddEvent_Click" Text="Add Event" />
+                        <br />
+                        <br />
+                        <br />
+                        <asp:Button ID="btnDeleteActivity0" runat="server" OnClick="btnDeleteActivity_Click" Text="Delete Event" />
+                    </asp:Panel>
                 </td>
-                <td>&nbsp;</td>
+                <td style="width: 477px; height: 134px;">
+                </td>
+                <td style="height: 134px"></td>
             </tr>
         </table>
-        &nbsp;<asp:GridView ID="GridView3" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="ConnectionDB" ForeColor="Black" GridLines="Horizontal">
+        &nbsp;<asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="connection" ForeColor="Black" GridLines="Horizontal" Width="243px">
             <Columns>
                 <asp:BoundField DataField="activityName" HeaderText="activityName" SortExpression="activityName" />
                 <asp:BoundField DataField="startDate" HeaderText="startDate" SortExpression="startDate" />
-                <asp:BoundField DataField="endDate" HeaderText="endDate" SortExpression="endDate" />
                 <asp:BoundField DataField="time" HeaderText="time" SortExpression="time" />
             </Columns>
             <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
@@ -114,54 +108,58 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#242121" />
         </asp:GridView>
+        <asp:SqlDataSource ID="connection" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [activityName], [startDate], [time] FROM [Activity] WHERE (([familyID] = @familyID) AND ([startDate] = @startDate))">
+            <SelectParameters>
+                <asp:SessionParameter Name="familyID" SessionField="familyID" Type="Int32" />
+                <asp:ControlParameter ControlID="calAgenda" DbType="Date" Name="startDate" PropertyName="SelectedDate" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </asp:Panel>
 <br />
-<asp:Panel ID="pnlLinks" runat="server" Height="583px" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px">
+<asp:Panel ID="pnlLinks" runat="server" Height="478px" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px">
     <br />
-    <h1 class="plum">Family Links</h1> <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <br />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <h1 class="green">Family Links</h1> <br /> &nbsp;
     <table style="width: 100%;">
         <tr>
-            <td style="width: 52px">&nbsp;</td>
-            <td style="width: 101px"><h2>Budget</h2></td>
-            <td style="width: 248px">&nbsp;</td>
+            <td style="width: 28px">&nbsp;</td>
+            <td style="width: 101px"><h3>Budget</h3></td>
+            <td style="width: 170px">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="width: 52px">&nbsp;</td>
+            <td style="width: 28px">&nbsp;</td>
             <td style="width: 101px">&nbsp;</td>
-            <td style="width: 248px"><h3><a href="Budget.aspx">Current Month</a></h3></td>
+            <td style="width: 170px"><h5><a href="Budget.aspx">Current Month</a></h5></td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="width: 52px">&nbsp;</td>
+            <td style="width: 28px"></td>
+            <td style="width: 101px"></td>
+            <td style="width: 170px"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="width: 28px">&nbsp;</td>
+            <td style="width: 101px"><h3>Lists</h3></td>
+            <td style="width: 170px">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 28px">&nbsp;</td>
             <td style="width: 101px">&nbsp;</td>
-            <td style="width: 248px">&nbsp;</td>
+            <td style="width: 170px"><h5><a href="ToDo.aspx">To Do List</a></h5></td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="width: 52px">&nbsp;</td>
-            <td style="width: 101px"><h2>Lists</h2></td>
-            <td style="width: 248px">&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="width: 52px">&nbsp;</td>
+            <td style="width: 28px">&nbsp;</td>
             <td style="width: 101px">&nbsp;</td>
-            <td style="width: 248px"><h3><a href="ToDo.aspx">To Do List</a></h3></td>
+            <td style="width: 170px">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="width: 52px">&nbsp;</td>
+            <td style="width: 28px">&nbsp;</td>
             <td style="width: 101px">&nbsp;</td>
-            <td style="width: 248px">&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="width: 52px">&nbsp;</td>
-            <td style="width: 101px">&nbsp;</td>
-            <td style="width: 248px"><h3><a href="Grocery.aspx">Grocery List</a></h3></td>
+            <td style="width: 170px"><h5><a href="Grocery.aspx">Grocery List</a></h5></td>
             <td>&nbsp;</td>
         </tr>
     </table>

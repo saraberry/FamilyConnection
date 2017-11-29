@@ -70,5 +70,9 @@ namespace Connection.Account
             Response.Redirect("~/Views/Calendar.aspx");
         }
 
+        protected void btnDeleteActivity_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/DeleteActivity.aspx");
+        }
     }
 }

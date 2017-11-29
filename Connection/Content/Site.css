@@ -27,6 +27,15 @@ input[type="select"] {
     max-width: 280px;
 }
 
+a:link{
+    text-decoration: none;
+    color: darkblue;
+}
+a:visited{
+    text-decoration: none;
+    color: plum;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .jumbotron {

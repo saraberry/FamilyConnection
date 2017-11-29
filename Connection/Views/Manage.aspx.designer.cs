@@ -121,58 +121,58 @@ namespace Connection.Account {
         protected global::System.Web.UI.WebControls.Panel pnlCalendar;
         
         /// <summary>
-        /// calAgenda0 control.
+        /// calAgenda control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calAgenda0;
+        protected global::System.Web.UI.WebControls.Calendar calAgenda;
         
         /// <summary>
-        /// pnlManageCal0 control.
+        /// pnlManageCal1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlManageCal0;
+        protected global::System.Web.UI.WebControls.Panel pnlManageCal1;
         
         /// <summary>
-        /// btnAddEvent0 control.
+        /// btnAddEvent1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddEvent0;
+        protected global::System.Web.UI.WebControls.Button btnAddEvent1;
         
         /// <summary>
-        /// btnEditEvent0 control.
+        /// btnDeleteActivity0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditEvent0;
+        protected global::System.Web.UI.WebControls.Button btnDeleteActivity0;
         
         /// <summary>
-        /// ConnectionDB control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ConnectionDB;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// GridView3 control.
+        /// connection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView3;
+        protected global::System.Web.UI.WebControls.SqlDataSource connection;
         
         /// <summary>
         /// pnlLinks control.

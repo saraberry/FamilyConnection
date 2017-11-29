@@ -18,10 +18,7 @@ namespace Connection.Database
             SqlConnection connection = FamilyDB.getConnection();
             try
             {
-                if(connection != null)
-                {
                     connection.Open();
-                }
                 
             }
             catch(Exception ex)

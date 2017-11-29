@@ -94,6 +94,15 @@ namespace Connection.Views {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator valEmail;
         
         /// <summary>
+        /// valEmailReq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valEmailReq;
+        
+        /// <summary>
         /// Label4 control.
         /// </summary>
         /// <remarks>
@@ -121,6 +130,15 @@ namespace Connection.Views {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator valPW;
         
         /// <summary>
+        /// valPWReq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valPWReq;
+        
+        /// <summary>
         /// txtPWMatch control.
         /// </summary>
         /// <remarks>
@@ -137,6 +155,15 @@ namespace Connection.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator valPWMatch;
+        
+        /// <summary>
+        /// valPWConfirmReq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valPWConfirmReq;
         
         /// <summary>
         /// Label5 control.

@@ -5,18 +5,16 @@ using System.Web;
 
 namespace Connection.Classes
 {
-    public class ToDo
+    public class ToDo : List
     {
-        string assingedMember;
+
         DateTime dueDate;
 
         public ToDo() { }
-        public ToDo(string assignedMember, DateTime dueDate)
+        public ToDo(DateTime dueDate, int listItemID, int familyID, string listItem, bool isComplete, string listType) : base(listItemID, familyID, listItem, isComplete, listType)
         {
-            this.AssignedMember = assignedMember;
             this.DueDate = dueDate;
         }
-        public string AssignedMember { get; set; }
         public DateTime DueDate { get; set; }
     }
 }

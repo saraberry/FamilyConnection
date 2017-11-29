@@ -65,6 +65,10 @@ namespace Connection.Account
 
         }
 
+        protected void btnAddEvent_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Calendar.aspx");
+        }
 
     }
 }

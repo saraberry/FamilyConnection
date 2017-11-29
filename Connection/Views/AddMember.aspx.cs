@@ -18,8 +18,10 @@ namespace Connection.Views
 
         protected void btnAddMember_Click(object sender, EventArgs e)
         {
-            Users u = (Users)Session["Users"];
-            int familyID = u.FamilyID;
+           // Users u = (Users)Session["Users"];
+           // int familyID = u.FamilyID;
+
+            int familyID = (int)Session["familyID"];
 
             Members m = new Members();
             m.FamilyID = familyID;
@@ -27,10 +29,27 @@ namespace Connection.Views
             m.MemberLast = txtMemLName.Text;
             m.MemberRole = txtRole.Text;
             m.MemberBirthdate = Convert.ToDateTime(txtBirthdate.Text);
+            try
+            {
+               bool exist = MembersDA.memberExists(m);
 
-            MembersDA.addMember(m);
+               if(exist == false)
+                {
+                    MembersDA.addMember(m);
+                }
+               else
+                {
+                    lblError.Text = "Family Member Already Exists";
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            
 
-            Response.Redirect("~/Manage.aspx");
+            Response.Redirect("~/Views/Manage.aspx");
         }
     }
 }

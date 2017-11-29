@@ -63,7 +63,9 @@
         </tr>
         <tr>
             <td style="width: 156px">&nbsp;</td>
-            <td style="width: 235px">&nbsp;</td>
+            <td style="width: 235px">
+                <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
+            </td>
             <td>&nbsp;</td>
         </tr>
         <tr>

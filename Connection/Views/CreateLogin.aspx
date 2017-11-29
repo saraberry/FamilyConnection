@@ -101,7 +101,7 @@
         <tr>
             <td style="width: 137px; margin-left: 40px">&nbsp;</td>
             <td style="width: 257px">
-                <asp:Button ID="Button1" runat="server" Text="Create User" />
+                <asp:Button ID="btnCreate" runat="server" OnClick="btnCreate_Click" Text="Create User" />
             </td>
             <td>&nbsp;</td>
         </tr>

@@ -174,7 +174,7 @@ namespace Connection.Database
                 connection.Open();
             }
 
-            String query = "SELECT * FROM Users WHERE userLogin = @login and userPasswrod = @password";
+            String query = "SELECT * FROM Users WHERE userLogin = @login and userPassword = @password";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@login", login);
             cmd.Parameters.AddWithValue("@password", password);

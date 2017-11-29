@@ -13,13 +13,13 @@ namespace Connection.Views {
     public partial class DeleteMember {
         
         /// <summary>
-        /// cbxlMembers control.
+        /// ddlFName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList cbxlMembers;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFName;
         
         /// <summary>
         /// ConnectionDB control.
@@ -29,6 +29,24 @@ namespace Connection.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource ConnectionDB;
+        
+        /// <summary>
+        /// ddlBDay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlBDay;
+        
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
         /// btnDelete control.

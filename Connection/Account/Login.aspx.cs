@@ -27,7 +27,9 @@ namespace Connection.Account
             {
                 Users u = new Users();
                 u = UsersDA.getUserByLogin(login, password);
-                Session["User"] = u;
+                Session["Users"] = u;
+                Session["familyID"] = u.FamilyID;
+
                 Response.Redirect("~/Views/Manage.aspx");
             }
             else

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Connection.Database;
+using Connection.Classes;
 
 namespace Connection.Views
 {
@@ -11,17 +13,33 @@ namespace Connection.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
 
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
+            int familyID = (int)Session["familyID"];
+            string fname = ddlFName.SelectedValue;
+            DateTime bday = Convert.ToDateTime(ddlBDay.SelectedValue);
 
+            try
+            {
+                MembersDA.DeleteMember(familyID, fname, bday);
+                lblError.Text = "Member Deleted Succesfully";
+                ddlFName.DataBind();
+                ddlBDay.DataBind();
+            }
+            catch
+            {
+                lblError.Text = "Invalid Name and Birthday Combination";
+            }
+            
         }
 
         protected void btnFinished_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Manage.aspx");
+            Response.Redirect("~/Views/Manage.aspx");
         }
     }
 }

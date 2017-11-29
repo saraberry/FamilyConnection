@@ -13,10 +13,15 @@ namespace Connection.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            btnHome.Visible = false;
         }
 
-        protected void btnCreateUser_Click(object sender, EventArgs e)
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/Manage.aspx");
+        }
+
+        protected void btnCreate_Click(object sender, EventArgs e)
         {
             Users u = (Users)Session["Users"];
             Users newu = new Users();
@@ -36,25 +41,18 @@ namespace Connection.Views
             {
                 lblError.Text = "User Already Exists";
                 btnHome.Visible = true;
-    
+
             }
-                
+
 
             if (UsersDA.getUserByLogin(newu.UserLogin, newu.UserPassword) != null)
             {
-                Response.Redirect("~/Manage.aspx");
+                Response.Redirect("~/Views/Manage.aspx");
             }
             else
             {
                 lblError.Text = "User Creation Failed! Check for errors and try again.";
             }
-            
-
-        }
-
-        protected void btnHome_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Manage.aspx");
         }
     }
 }

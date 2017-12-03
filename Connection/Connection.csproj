@@ -191,8 +191,9 @@
     <Content Include="Views\Calendar.aspx" />
     <Content Include="Views\CreateLogin.aspx" />
     <Content Include="Views\DeleteActivity.aspx" />
+    <Content Include="Views\DeleteList.aspx" />
     <Content Include="Views\DeleteMember.aspx" />
-    <Content Include="Views\Grocery.aspx" />
+    <Content Include="Views\GroceryList.aspx" />
     <Content Include="Views\Manage.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\Oops.aspx" />
@@ -303,6 +304,13 @@
     <Compile Include="Views\DeleteActivity.aspx.designer.cs">
       <DependentUpon>DeleteActivity.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\DeleteList.aspx.cs">
+      <DependentUpon>DeleteList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\DeleteList.aspx.designer.cs">
+      <DependentUpon>DeleteList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\DeleteMember.aspx.cs">
       <DependentUpon>DeleteMember.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -310,12 +318,12 @@
     <Compile Include="Views\DeleteMember.aspx.designer.cs">
       <DependentUpon>DeleteMember.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Grocery.aspx.cs">
-      <DependentUpon>Grocery.aspx</DependentUpon>
+    <Compile Include="Views\GroceryList.aspx.cs">
+      <DependentUpon>GroceryList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Grocery.aspx.designer.cs">
-      <DependentUpon>Grocery.aspx</DependentUpon>
+    <Compile Include="Views\GroceryList.aspx.designer.cs">
+      <DependentUpon>GroceryList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Manage.aspx.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
@@ -350,10 +358,10 @@
     <Compile Include="Classes\Activity.cs" />
     <Compile Include="Classes\Budget.cs" />
     <Compile Include="Classes\Family.cs" />
-    <Compile Include="Classes\Grocery.cs" />
+    <Compile Include="Classes\GroceryItems.cs" />
     <Compile Include="Classes\List.cs" />
     <Compile Include="Classes\Members.cs" />
-    <Compile Include="Classes\ToDo.cs" />
+    <Compile Include="Classes\ToDoItems.cs" />
     <Compile Include="Classes\Users.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

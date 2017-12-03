@@ -13,8 +13,13 @@ namespace Connection.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Users u = (Users)Session["Users"];
-            int familyID = (int)Session["familyID"];
+            BindCalendar(); 
+            try
+            {
+                Users u = (Users)Session["Users"];
+                int familyID = (int)Session["familyID"];
+
+
           if (u != null)
             {
 
@@ -43,8 +48,17 @@ namespace Connection.Account
                 }
 
             }
+            }
+            catch
+            {
+                Response.Redirect("~/Account/Login.aspx");
+            }
         }
-        
+        private void BindCalendar()
+        {
+            calAgenda.SelectedDate = DateTime.Now;
+        }
+
         protected void btnAddMember0_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/AddMember.aspx");

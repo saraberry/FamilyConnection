@@ -12,7 +12,7 @@ namespace Connection.Database
         {
             try
             {
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\sb244823\Source\Repos\FamilyConnection\Connection\App_Data\FamilyDB.mdf;Integrated Security=True";
+                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\sjb\Source\Repos\FamilyConnection\Connection\App_Data\FamilyDB.mdf;Integrated Security=True";
                 SqlConnection connection = new SqlConnection(connectionString);
                 return connection;
             }

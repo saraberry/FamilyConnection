@@ -14,6 +14,7 @@ namespace Connection.Views
         protected void Page_Load(object sender, EventArgs e)
         {
             btnDone.Visible = false;
+            DateTime today =  DateTime.Today;
         }
 
         protected void btnDelActivity_Click(object sender, EventArgs e)

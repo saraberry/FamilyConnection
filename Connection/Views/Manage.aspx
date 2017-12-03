@@ -58,13 +58,14 @@
         &nbsp;<table class="nav-justified">
             <tr>
                 <td style="width: 283px">
-                    <asp:Calendar ID="calAgenda" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="167px" NextPrevFormat="FullMonth" Width="273px" SelectedDate="11/29/2017 11:54:22" VisibleDate="2017-11-29">
+                    <asp:Calendar ID="calAgenda" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="167px" NextPrevFormat="FullMonth" Width="273px" SelectedDate="<%# DateTime.Today %>">
                         <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                         <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                         <OtherMonthDayStyle ForeColor="#999999" />
                         <SelectedDayStyle BackColor="#333399" ForeColor="White" />
                         <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
                         <TodayDayStyle BackColor="#CCCCCC" />
+
                     </asp:Calendar>
                 </td>
                 <td style="width: 477px">
@@ -93,7 +94,7 @@
                 <td style="height: 134px"></td>
             </tr>
         </table>
-        &nbsp;<asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="connection" ForeColor="Black" GridLines="Horizontal" Width="243px">
+        &nbsp;<asp:GridView ID="grdCal" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="connection" ForeColor="Black" GridLines="Horizontal" Width="452px" Height="433px">
             <Columns>
                 <asp:BoundField DataField="activityName" HeaderText="activityName" SortExpression="activityName" />
                 <asp:BoundField DataField="startDate" HeaderText="startDate" SortExpression="startDate" />
@@ -159,7 +160,7 @@
         <tr>
             <td style="width: 28px">&nbsp;</td>
             <td style="width: 101px">&nbsp;</td>
-            <td style="width: 170px"><h5><a href="Grocery.aspx">Grocery List</a></h5></td>
+            <td style="width: 170px"><h5><a href="GroceryList.aspx">Grocery List</a></h5></td>
             <td>&nbsp;</td>
         </tr>
     </table>

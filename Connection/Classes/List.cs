@@ -8,11 +8,10 @@ namespace Connection.Classes
     public class List
     {
         int listItemID, familyID;
-        string listItem, listType;
-        bool isComplete;
+        string listItem, listType,  isComplete;
 
         public List() { }
-        public List(int listItemID, int familyID, string listItem, bool isComplete, string listType)
+        public List(int listItemID, int familyID, string listItem, string isComplete, string listType)
         {
             this.ListItemID = listItemID;
             this.FamilyID = familyID;
@@ -25,6 +24,6 @@ namespace Connection.Classes
         public int FamilyID { get; set; }
         public string ListItem { get; set; }
         public string ListType { get; set; }
-        public bool IsComplete { get; set; }
+        public string IsComplete { get; set; }
     }
 }

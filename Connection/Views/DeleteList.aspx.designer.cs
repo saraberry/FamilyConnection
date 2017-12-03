@@ -10,43 +10,7 @@
 namespace Connection.Views {
     
     
-    public partial class Grocery {
-        
-        /// <summary>
-        /// grdList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdList;
-        
-        /// <summary>
-        /// btnComplete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnComplete;
-        
-        /// <summary>
-        /// btnFinish control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFinish;
-        
-        /// <summary>
-        /// connection control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource connection;
+    public partial class DeleteGrocery {
         
         /// <summary>
         /// Label1 control.
@@ -58,13 +22,22 @@ namespace Connection.Views {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// txtItem control.
+        /// ddlListType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtItem;
+        protected global::System.Web.UI.WebControls.DropDownList ddlListType;
+        
+        /// <summary>
+        /// Connection control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource Connection;
         
         /// <summary>
         /// Label2 control.
@@ -76,39 +49,30 @@ namespace Connection.Views {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// txtStore control.
+        /// ddlItemName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStore;
+        protected global::System.Web.UI.WebControls.DropDownList ddlItemName;
         
         /// <summary>
-        /// Label3 control.
+        /// btnDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Button btnDelete;
         
         /// <summary>
-        /// txtPrice control.
+        /// btnFinished control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrice;
-        
-        /// <summary>
-        /// btnAdd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Button btnFinished;
     }
 }

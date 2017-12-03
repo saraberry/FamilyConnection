@@ -88,5 +88,11 @@ namespace Connection.Account
         {
             Response.Redirect("~/Views/DeleteActivity.aspx");
         }
+
+        protected void calAgenda_SelectionChanged(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Manage.aspx");
+            calAgenda.Focus();
+        }
     }
 }

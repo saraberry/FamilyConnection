@@ -13,7 +13,15 @@ namespace Connection.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            btnExit.Visible = false;
+            try
+            {
+                Users u = (Users)Session["Users"];
+                int familyID = (int)Session["familyID"];
+            }
+            catch{
+                Response.Redirect("~/Account/Login.aspx");
+            }
+                btnExit.Visible = false;
         }
 
         protected void btnAddEvent_Click(object sender, EventArgs e)
@@ -29,7 +37,8 @@ namespace Connection.Views
             try
             {
                 CalendarDA.addActivity(a);
-                Response.Redirect("~/Views/Manage.aspx");
+                Response.Redirect("~/Views/Calendar.aspx");
+                lblError.Text = "Activity Successfully added";
             }
             catch(Exception ex)
             {

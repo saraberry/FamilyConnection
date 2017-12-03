@@ -13,7 +13,15 @@ namespace Connection.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                Users u = (Users)Session["Users"];
+                int familyID = (int)Session["familyID"];
+            }
+            catch
+            {
+                Response.Redirect("~/Account/Login.aspx");
+            }
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)

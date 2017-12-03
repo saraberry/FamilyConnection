@@ -58,7 +58,7 @@
         &nbsp;<table class="nav-justified">
             <tr>
                 <td style="width: 283px">
-                    <asp:Calendar ID="calAgenda" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="167px" NextPrevFormat="FullMonth" Width="273px" SelectedDate="<%# DateTime.Today %>">
+                    <asp:Calendar ID="calAgenda" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="167px" NextPrevFormat="FullMonth" Width="273px" SelectedDate="<%# DateTime.Today %>" OnSelectionChanged="calAgenda_SelectionChanged">
                         <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                         <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                         <OtherMonthDayStyle ForeColor="#999999" />
@@ -117,50 +117,26 @@
         </asp:SqlDataSource>
     </asp:Panel>
 <br />
-<asp:Panel ID="pnlLinks" runat="server" Height="478px" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px">
+<asp:Panel ID="pnlLinks" runat="server" Height="337px" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px">
     <br />
-    <h1 class="green">Family Links</h1> <br /> &nbsp;
+    <h1 class="green">Family Links</h1> &nbsp;
     <table style="width: 100%;">
         <tr>
             <td style="width: 28px">&nbsp;</td>
-            <td style="width: 101px"><h3>Budget</h3></td>
-            <td style="width: 170px">&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="width: 28px">&nbsp;</td>
-            <td style="width: 101px">&nbsp;</td>
-            <td style="width: 170px"><h5><a href="Budget.aspx">Current Month</a></h5></td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="width: 28px"></td>
-            <td style="width: 101px"></td>
+            <td style="width: 324px"><a href="ToDo.aspx"><h3 style="margin-right: 0px">To Do List</h3></a></td>
             <td style="width: 170px"></td>
-            <td></td>
+            <td>&nbsp;</td>
         </tr>
         <tr>
             <td style="width: 28px">&nbsp;</td>
-            <td style="width: 101px"><h3>Lists</h3></td>
+            <td style="width: 324px">&nbsp;</td>
             <td style="width: 170px">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td style="width: 28px">&nbsp;</td>
-            <td style="width: 101px">&nbsp;</td>
-            <td style="width: 170px"><h5><a href="ToDo.aspx">To Do List</a></h5></td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="width: 28px">&nbsp;</td>
-            <td style="width: 101px">&nbsp;</td>
-            <td style="width: 170px">&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="width: 28px">&nbsp;</td>
-            <td style="width: 101px">&nbsp;</td>
-            <td style="width: 170px"><h5><a href="GroceryList.aspx">Grocery List</a></h5></td>
+            <td style="width: 324px"><a href="GroceryList.aspx"><h3>Grocery List</h3></a></td>
+            <td style="width: 170px"></td>
             <td>&nbsp;</td>
         </tr>
     </table>

@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Manage.aspx.cs" Inherits="Connection.Account.Manage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-
+    
+    <asp:Button ID="btnLogout" runat="server" OnClick="btnLogout_Click" Text="Log Out" />
+    
+    <br />
     <asp:Panel ID="pnlFamilyInfo" runat="server" Height="188px" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px">
        <div class ="pad">
         <h1 class="plum">Family Information</h1>
@@ -51,14 +53,14 @@
         </div>
     </asp:Panel>
     <br />
-    <asp:Panel ID="pnlCalendar" runat="server" Height="989px" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px">
+    <asp:Panel ID="pnlCalendar" runat="server" Height="868px" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px">
         <br />
        <h1 class="yellow">Family Calendar</h1> 
         <br />
         &nbsp;<table class="nav-justified">
             <tr>
                 <td style="width: 283px">
-                    <asp:Calendar ID="calAgenda" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="167px" NextPrevFormat="FullMonth" Width="273px" SelectedDate="<%# DateTime.Today %>" OnSelectionChanged="calAgenda_SelectionChanged">
+                    <asp:Calendar ID="calAgenda" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="167px" NextPrevFormat="FullMonth" Width="273px" SelectedDate="<%# DateTime.Today %>" >
                         <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                         <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                         <OtherMonthDayStyle ForeColor="#999999" />
@@ -94,20 +96,12 @@
                 <td style="height: 134px"></td>
             </tr>
         </table>
-        &nbsp;<asp:GridView ID="grdCal" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="connection" ForeColor="Black" GridLines="Horizontal" Width="452px" Height="433px">
+        &nbsp;<asp:GridView ID="grdCal" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="connection" Width="445px">
             <Columns>
-                <asp:BoundField DataField="activityName" HeaderText="activityName" SortExpression="activityName" />
-                <asp:BoundField DataField="startDate" HeaderText="startDate" SortExpression="startDate" />
-                <asp:BoundField DataField="time" HeaderText="time" SortExpression="time" />
+                <asp:BoundField DataField="activityName" HeaderText="Activity" SortExpression="activityName" />
+                <asp:BoundField DataField="startDate" HeaderText="Date" SortExpression="startDate" />
+                <asp:BoundField DataField="time" HeaderText="Time" SortExpression="time" />
             </Columns>
-            <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-            <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-            <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-            <SortedAscendingCellStyle BackColor="#F7F7F7" />
-            <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-            <SortedDescendingCellStyle BackColor="#E5E5E5" />
-            <SortedDescendingHeaderStyle BackColor="#242121" />
         </asp:GridView>
         <asp:SqlDataSource ID="connection" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [activityName], [startDate], [time] FROM [Activity] WHERE (([familyID] = @familyID) AND ([startDate] = @startDate))">
             <SelectParameters>

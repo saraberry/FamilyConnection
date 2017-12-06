@@ -37,8 +37,8 @@ namespace Connection.Views
             try
             {
                 CalendarDA.addActivity(a);
-                Response.Redirect("~/Views/Calendar.aspx");
-                lblError.Text = "Activity Successfully added";
+                Response.Redirect("~/Views/Manage.aspx");
+
             }
             catch(Exception ex)
             {

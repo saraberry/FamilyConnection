@@ -29,6 +29,13 @@ namespace Connection.Account
                     lblSubcLabel.Visible = false;
                     lblSubscEnd.Visible = false;
                 }
+                if (u.Permissions == "view")
+                {
+                    pnlLinks.Visible = false;
+                    pnlManageCal1.Visible = false;
+                    
+                }
+
                 Family f = new Family();
                 f = FamilyDA.getFamilyByID(u.FamilyID);
 
@@ -74,10 +81,6 @@ namespace Connection.Account
             Response.Redirect("~/Views/CreateLogin.aspx");
         }
 
-        protected void rptMembers_ItemCommand(object source, RepeaterCommandEventArgs e)
-        {
-
-        }
 
         protected void btnAddEvent_Click(object sender, EventArgs e)
         {
@@ -89,10 +92,10 @@ namespace Connection.Account
             Response.Redirect("~/Views/DeleteActivity.aspx");
         }
 
-        protected void calAgenda_SelectionChanged(object sender, EventArgs e)
+        protected void btnLogout_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Manage.aspx");
-            calAgenda.Focus();
+            Session.Clear();
+            Response.Redirect("~/Account/Login.aspx");
         }
     }
 }

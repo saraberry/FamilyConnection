@@ -15,13 +15,13 @@
         <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
         <SortedDescendingCellStyle BackColor="#E5E5E5" />
         <SortedDescendingHeaderStyle BackColor="#242121" />
-    </asp:GridView>
-    <asp:SqlDataSource ID="Connection" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [listItem], [storeName], [salePrice] FROM [ListItems] WHERE (([familyID] = @familyID) AND ([listType] = @listType))">
-        <SelectParameters>
-            <asp:SessionParameter Name="familyID" SessionField="familyID" Type="Int32" />
-            <asp:Parameter DefaultValue="grocery" Name="listType" Type="String" />
-        </SelectParameters>
-    </asp:SqlDataSource>
+</asp:GridView>
+<asp:SqlDataSource ID="Connection" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [listItem], [storeName], [salePrice] FROM [ListItems] WHERE (([familyID] = @familyID) AND ([listType] = @listType))">
+    <SelectParameters>
+        <asp:SessionParameter Name="familyID" SessionField="familyID" Type="Int32" />
+        <asp:Parameter DefaultValue="grocery" Name="listType" Type="String" />
+    </SelectParameters>
+</asp:SqlDataSource>
     <br />
 
                 <asp:Button ID="btnComplete" runat="server" OnClick="btnComplete_Click" Text="Delete Items" />
@@ -41,7 +41,9 @@
             <td style="height: 23px; width: 256px">
                 <asp:TextBox ID="txtItem" runat="server" Width="200px"></asp:TextBox>
             </td>
-            <td style="height: 23px"></td>
+            <td style="height: 23px">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtItem" ErrorMessage="Item Name is Required" ForeColor="Red"></asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td style="width: 32px">&nbsp;</td>
@@ -76,12 +78,12 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="width: 32px">&nbsp;</td>
-            <td style="width: 173px">&nbsp;</td>
-            <td style="width: 256px">
+            <td style="width: 32px; height: 22px;"></td>
+            <td style="width: 173px; height: 22px;"></td>
+            <td style="width: 256px; height: 22px;">
                 <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
             </td>
-            <td>&nbsp;</td>
+            <td style="height: 22px"></td>
         </tr>
         <tr>
             <td style="width: 32px; margin-left: 120px">&nbsp;</td>

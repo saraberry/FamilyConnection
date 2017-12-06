@@ -27,12 +27,14 @@ namespace Connection.Views
 
         protected void btnComplete_Click(object sender, EventArgs e)
         {
+            btnComplete.CausesValidation = false;
             Response.Redirect("~/Views/DeleteList.aspx");
 
         }
 
         protected void btnFinish_Click(object sender, EventArgs e)
         {
+            btnFinish.CausesValidation = false;
             Response.Redirect("~/Views/Manage.aspx");
         }
 

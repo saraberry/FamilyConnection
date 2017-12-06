@@ -39,12 +39,13 @@ namespace Connection.Views
             newu.UserLast = txtLName.Text;
             newu.UserEmail = txtEmail.Text;
             newu.UserLogin = txtEmail.Text;
-            newu.UserPassword = txtPW.Text;
+            newu.UserPassword = u.UserPassword = BCrypt.Net.BCrypt.HashPassword(txtPW.Text, 10);
             newu.Permissions = ddlPermissions.SelectedValue;
 
-            if (UsersDA.getUserByLogin(newu.UserLogin, newu.UserPassword) == null)
+            if (UsersDA.userExists(newu.UserLogin) == false)
             {
-                UsersDA.addUser(newu);
+                    UsersDA.addUser(newu);
+                
             }
             else
             {
@@ -54,7 +55,7 @@ namespace Connection.Views
             }
 
 
-            if (UsersDA.getUserByLogin(newu.UserLogin, newu.UserPassword) != null)
+            if (UsersDA.getUserByLogin(newu.UserLogin) != null)
             {
                 Response.Redirect("~/Views/Manage.aspx");
             }

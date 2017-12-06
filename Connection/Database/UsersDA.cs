@@ -28,11 +28,9 @@ namespace Connection.Database
             
             
 
-            String query = "SELECT * FROM Users WHERE userLogin = @login and userPassword = @password";
+            String query = "SELECT * FROM Users WHERE userLogin = @login";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@login", login);
-            cmd.Parameters.AddWithValue("@password", password);
-
 
             try
             {
@@ -40,17 +38,13 @@ namespace Connection.Database
 
                 if (read.Read())
                 {
-                    u.UserID = (int)read["userID"];
-                    u.FamilyID = (int)read["familyID"];
-                    u.UserFirst = (string)read["userFirst"];
-                    u.UserLast = (string)read["userLast"];
-                    u.UserLogin = (string)read["userLogin"];
-                    u.UserPassword = (string)read["userPassword"];
-                    u.UserEmail = (string)read["userEmail"];
-                    u.Permissions = (string)read["permissions"];
+
+                    string pass = (string)read["userPassword"];
+                    if (BCrypt.Net.BCrypt.Verify(password, pass)) { validate = true; }
+                    else { validate = false; }
 
                 }
-                else return false;
+                else validate = false;
 
             }
             catch (SqlException ex)
@@ -64,10 +58,6 @@ namespace Connection.Database
             finally
             {
                 connection.Close();
-            }
-            if(u.UserLogin == login && u.UserPassword == password)
-            {
-                validate = true; 
             }
             return validate;
 
@@ -124,6 +114,9 @@ namespace Connection.Database
         }
         public static void addUser(Users u)
         {
+            
+
+
             SqlConnection connection = FamilyDB.getConnection();
 
             String query = "Insert into Users(familyID, userFirst, userLast, userLogin, userPassword, userEmail, permissions) values (@familyID, @userFirst, @userLast, @userLogin, @userPassword, @userEmail, @permissions)";
@@ -159,9 +152,9 @@ namespace Connection.Database
                 connection.Close();
             }
         }
-        public static Users getUserByLogin(string login, string password)
+        public static Users getUserByLogin(string login)
         {
-            if (login == null || password == null) { return null; }
+            if (login == null) { return null; }
 
             Users u = new Users();
 
@@ -171,10 +164,9 @@ namespace Connection.Database
                 connection.Open();
             }
 
-            String query = "SELECT * FROM Users WHERE userLogin = @login and userPassword = @password";
+            String query = "SELECT * FROM Users WHERE userLogin = @login";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@login", login);
-            cmd.Parameters.AddWithValue("@password", password);
 
 
             try
@@ -198,17 +190,69 @@ namespace Connection.Database
             }
             catch (SqlException ex)
             {
-                return null;
+                Console.WriteLine(ex);
             }
             catch (Exception ex)
             {
-                return null;
+                Console.WriteLine(ex);
             }
             finally
             {
                 connection.Close();
             }
             return u;
+        }
+        public static bool userExists(string login)
+        {
+            Users u = new Users();
+            bool validate = false;
+            if ( login == null) { validate = false; }
+
+            SqlConnection connection = FamilyDB.getConnection();
+            try
+            {
+                connection.Open();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            
+            String query = "SELECT * FROM Users WHERE userLogin = @login";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@login", login);
+
+            try
+            {
+                SqlDataReader read = cmd.ExecuteReader();
+
+                if (read.Read())
+                {
+
+                    string userLogin = (string)read["userLogin"];
+                    if (login == userLogin) { validate = true; }
+                    else { validate = false; }
+
+                }
+                else validate = false;
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return validate;
+
         }
     }
 }

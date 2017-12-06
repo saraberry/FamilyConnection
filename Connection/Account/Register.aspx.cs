@@ -26,7 +26,7 @@ namespace Connection.Account
 
             if (password == passwordConfirm)
             {
-                u.UserPassword = password;
+                u.UserPassword = BCrypt.Net.BCrypt.HashPassword(password, 10);
                 u.UserFirst = txtHOHFName.Text;
                 u.UserLast = txtHOHLName.Text;
                 u.UserEmail = txtHOHEmail.Text;

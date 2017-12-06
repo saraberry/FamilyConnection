@@ -42,8 +42,7 @@
                 <asp:TextBox ID="txtItem" runat="server" Width="200px"></asp:TextBox>
             </td>
             <td style="height: 23px">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtItem" ErrorMessage="Item Name is Required" ForeColor="Red"></asp:RequiredFieldValidator>
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td style="width: 32px">&nbsp;</td>

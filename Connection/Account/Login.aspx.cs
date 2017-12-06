@@ -26,7 +26,7 @@ namespace Connection.Account
             if(correct == true)
             {
                 Users u = new Users();
-                u = UsersDA.getUserByLogin(login, password);
+                u = UsersDA.getUserByLogin(login);
                 Session["Users"] = u;
                 Session["familyID"] = u.FamilyID;
 

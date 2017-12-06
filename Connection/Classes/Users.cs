@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+
 namespace Connection.Classes
 {
     public class Users
@@ -32,4 +33,5 @@ namespace Connection.Classes
         public string UserEmail { get; set; }
         public string Permissions { get; set; }
     }
+
 }

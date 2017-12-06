@@ -28,7 +28,7 @@ namespace Connection.Views
         {
             int familyID = (int)Session["familyID"];
             string listType = ddlListType.SelectedValue;
-            string listName = ddlItemName.SelectedValue;
+            string listName = ddlItem.SelectedValue;
 
             ListDA.DeleteList(familyID, listType, listName);
             Response.Redirect("~/Views/DeleteList.aspx");
